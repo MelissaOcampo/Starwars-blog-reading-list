@@ -1,12 +1,16 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import Card from "../component/cards.js"
+import {Card} from "../component/cards.js"
+import React, {useEffect, useState, useContext} from "react";//1. llamar al hook useContext
+import {Context} from "../store/appContext.js" //2. importar el Contexto
 
-export const Home = () => (
+export const Home = () => {
+	
+	const {store}=useContext(Context)//3.Activo el uso del contexto y desestructuro las propiedad que quiero utilizar
+
+	return(
 	<>
 	<div className="text-center mt-5">
-		 <Card/>
+		{store.personajes.map((item)=><Card nombre={item.name} id={item.uid}/>)}
 	</div>
 	</>
-);
+)};
