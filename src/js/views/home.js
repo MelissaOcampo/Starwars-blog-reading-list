@@ -10,7 +10,7 @@ export const Home = () => {
 	return(
 	<>
 	<div className="text-center mt-5">
-		{store.personajes.map((item)=><Card nombre={item.name} id={item.uid}/>)}
+		{store.personajes.map((item)=><Card nombre={item.name} id={item.uid} key={item.uid}/>)}
 	</div>
 	</>
 )};

@@ -6,7 +6,8 @@ const getState = ({
     return {
         store: {
             personajes: [],
-            infoPersona: {}
+            infoPersona: {},
+            favoritos: [],
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -26,28 +27,40 @@ const getState = ({
             infoDePersonaje: (id) => {
                 fetch("https://www.swapi.tech/api/people/" + id)
                     .then(res => res.json())
-                    .then(data => setStore({infoPersona: data.result}))
+                    .then(data => setStore({
+                        infoPersona: data.result
+                    }))
                     .catch(err => console.error(err))
             },
-
-            changeColor: (index, color) => {
-                //get the store
+            agregarFavoritos: (name) => {
                 const store = getStore();
-
-                //we have to loop the entire demo array to look for the respective index
-                //and change its color
-                const demo = store.demo.map((elm, i) => {
-                    if (i === index) elm.background = color;
-                    return elm;
-                });
-
-                //reset the global store
                 setStore({
-                    demo: demo
+                  favoritos:[...store.favoritos,name]
                 });
-            }
+
+                console.log(store.favoritos);
+
+                console.log(name);
+                
+                }
+                // changeColor: (index, color) => {
+                    //get the store
+                    // const store = getStore();
+
+                    //we have to loop the entire demo array to look for the respective index
+                    //and change its color
+                    // const demo = store.demo.map((elm, i) => {
+                    //     if (i === index) elm.background = color;
+                    //     return elm;
+                    // });
+
+                    //reset the global store
+    //                 setStore({
+    //                     demo: demo
+    //                 });
+    //             }
+     }
         }
-    };
-};
+    }
 
 export default getState;
