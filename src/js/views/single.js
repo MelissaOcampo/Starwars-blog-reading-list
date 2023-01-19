@@ -24,11 +24,11 @@ export const Single = props => {
         <div className = "jumbotron" >
         
         
-        <h1>{store.infoPersona.properties?.height}</h1>   
-        <h1>{store.infoPersona.properties?.hair_color}</h1>   
-        <h1>{store.infoPersona.properties?.skin_color}</h1> 
-        <h1>{store.infoPersona.properties?.eye_color}</h1>  
-        <h1>{store.infoPersona.properties?.birth_year}</h1> 
+        <p>{store.infoPersona.properties?.height}</p>   
+        <p>{store.infoPersona.properties?.hair_color}</p>   
+        <p>{store.infoPersona.properties?.skin_color}</p> 
+        <p>{store.infoPersona.properties?.eye_color}</p>  
+        <p>{store.infoPersona.properties?.birth_year}</p> 
           <hr className = "my-4" />
 
         <Link to = "/" >
