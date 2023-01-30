@@ -19,10 +19,11 @@ export const Single = props => {
        actions.infoDePersonaje(params.theid);
         
     },[])
+    let id=params.theid;
     return ( 
         <>
         <div className = "jumbotron" >
-        
+        <img src={"https://starwars-visualguide.com/assets/img/characters/"+ (id) +".jpg"} className="mb-4 border border-white rounded-3" alt="Luke"style={{height:"300px", width:"300px"}}/>
         
         <p>{store.infoPersona.properties?.height}</p>   
         <p>{store.infoPersona.properties?.hair_color}</p>   

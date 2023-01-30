@@ -6,6 +6,7 @@ export const Card = (props) => {
 
 const {store,actions} = useContext(Context);
     return (
+      <div className="col m-4">
       <div className="card" style={{width: "18rem"}}>
         {/* https://starwars-visualguide.com/assets/img/characters/3.jpg */}
   <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"} className="card-img-top" alt="..."/> 
@@ -14,6 +15,7 @@ const {store,actions} = useContext(Context);
     <Link to={"/single/"+props.id} className="btn btn-primary float-start">Learn more!</Link>
     <button className="btn btn-danger" onClick={()=>{actions.agregarFavoritos(props.nombre); console.log(props.nombre)}}>like</button>
   </div>
+</div>
 </div>
     );
 };
