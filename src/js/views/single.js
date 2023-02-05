@@ -14,12 +14,12 @@ import {
 
 export const Single = props => {
     const {store,actions} = useContext(Context);
-    const params = useParams();
-    useEffect(() => {
-       actions.infoDePersonaje(params.theid);
+    const params = useParams(); //"useParams" para obtener los parámetros de la URL.
+    useEffect(() => { //"useEffect" para ejecutar una acción cuando se monta el componente.
+       actions.infoDePersonaje(params.theid); //se está llamando a una función "infoDePersonaje" que recibe como argumento el valor "params.theid".
         
     },[])
-    let id=params.theid;
+    let id=params.theid; // Se utiliza para acceder y trabajar con valores específicos dentro de un objeto.
     return ( 
         <>
         <div className="card mb-3" >
