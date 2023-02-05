@@ -22,16 +22,25 @@ export const Single = props => {
     let id=params.theid;
     return ( 
         <>
-        <div className = "jumbotron" >
-        <img src={"https://starwars-visualguide.com/assets/img/characters/"+ (id) +".jpg"} className="mb-4 border border-white rounded-3" alt="Luke"style={{height:"300px", width:"300px"}}/>
-        
-        <p>{store.infoPersona.properties?.height}</p>   
-        <p>{store.infoPersona.properties?.hair_color}</p>   
-        <p>{store.infoPersona.properties?.skin_color}</p> 
-        <p>{store.infoPersona.properties?.eye_color}</p>  
-        <p>{store.infoPersona.properties?.birth_year}</p> 
-          <hr className = "my-4" />
+        <div className="card mb-3" >
+  <div className="row g-0">
+    <div className="col-md-4">
+      <img src={"https://starwars-visualguide.com/assets/img/characters/"+ (id) +".jpg"} className="img-fluid rounded-start" alt="..." style={{height:"600px", width:"800px"}}/>
+    </div>
+    <div className="col-md-8">
+      <div className="card-body">
+        <h5 className="card-title fs-1">{store.infoPersona.properties?.name}</h5>
+        <p className="card-text fs-3"> {store.infoPersona.properties?.height}</p>
+        <p className="card-text fs-3"> {store.infoPersona.properties?.hair_color} </p>
+        <p className="card-text fs-3"> {store.infoPersona.properties?.skin_color}</p>
+        <p className="card-text fs-3"> {store.infoPersona.properties?.eye_color} </p>
+        <p className="card-text fs-3"> {store.infoPersona.properties?.birth_year} </p>
+      </div>
+    </div>
+  </div>
+</div>
 
+        <div>
         <Link to = "/" >
         <span className = "btn btn-primary btn-lg"
         href = "#"
